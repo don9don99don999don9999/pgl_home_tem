@@ -152,29 +152,29 @@ function addTooltip(circle) {
 
         .attr("id", "tooltip")
         
-   // var offset = tooltip.node().getBBox().width / 2;
+    var offset = tooltip.node().getBBox().width / 2;
 
-   //( if ((x - offset) < 0) {
+   ( if ((x - offset) < 0) {
    
-    //       tooltip.attr("text-anchor", "start");
+           tooltip.attr("text-anchor", "start");
    
-    //       tooltip.attr("dx", -r);
+           tooltip.attr("dx", -r);
    
-      // }
+       }
    
-      // else if ((x + offset) > (width - margin)) {
+       else if ((x + offset) > (width - margin)) {
    
-      //    tooltip.attr("text-anchor", "end");
+         tooltip.attr("text-anchor", "end");
+ 
+          tooltip.attr("dx", r);
    
-       //    tooltip.attr("dx", r);
+       }
    
-      // }
+      else {
    
-      // else {
+           tooltip.attr("text-anchor", "middle");
    
-        //   tooltip.attr("text-anchor", "middle");
-   
-        //   tooltip.attr("dx", 0);       })
+           tooltip.attr("dx", 0);       })
 
 }
 
@@ -359,7 +359,7 @@ function drawNodes(nodes) {
 //var node_child =$('#plot').children('.node').val()    print(console.log(node_child)) //for (var i = 0 ; i> circleingar.length ; i++){dataset.push(circleingar)}console.log(dataset)
 //'#AT1G22920, #AT1G71230'
 //{{query|safe}}
- setTimeout(function() {  var circleingar = $('{{query|safe}}')
+ setInterval(function() {  var circleingar = $('{{query|safe}}')
 
 dataset =[]
  var dong3 = (circleingar)
@@ -471,3 +471,9 @@ d3.json("/static/{{jsonf}}", drawGraph);
 </body>
 
 </html>
+
+
+
+
+
+
